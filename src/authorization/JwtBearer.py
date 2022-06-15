@@ -20,3 +20,6 @@ class JWTBearer(HTTPBearer):
             
         else:
             raise HTTPException(status_code=403, detail="Invalid authorization code.")
+
+# This is used when you want to inject the caller as a dependency. This way it can be mocked during testing.
+inject_jwt_bearer = JWTBearer()
